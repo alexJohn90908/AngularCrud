@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row justify-content-center pt-5">
+        <div class="col-lg-8 col-md-6 col-12">
+          <div class="d-flex justify-content-between">
+              <h1>Home</h1>
+              <div>
+                  <a routerLink="/add" class="btn btn-info">Add Service</a>
+              </div>
+            </div>
+            <div class="row mt-4">
+              <div class="col-12">
+                <h2 class="text-danger">{{deleteMessage}}</h2>
+              </div>
+            </div>
+            <table class="table mt-5">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Service Name</th>
+                    <th scope="col">Owner ID</th>
+                    <th scope="col-2">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let service of services?.data">
+                    <ng-container *ngIf="service._id">
+                    <th scope="row">{{service._id}}</th>
+                </ng-container>
+                <ng-container *ngIf="service.ServiceName">
+                    <td>{{service.ServiceName}}</td>
+                </ng-container>
+                <ng-container *ngIf="service.ServiceName">
+                    <td>{{service.ownerId}}</td>
+                </ng-container>
+                    <div class="d-flex">
+                        <td><a routerLink="/update/{{service._id}}" class="btn btn-primary btn-sm">Edit</a></td>
+                        <td><button (click)="deleteService(service._id)" class="btn btn-danger btn-sm delebtn">Delete</button></td>
+                    </div>
+
+                  </tr>
+
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>

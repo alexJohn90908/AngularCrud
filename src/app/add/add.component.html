@@ -1,0 +1,19 @@
+<div class="container pt-5">
+    <div class="row justify-content-center">
+     <div class="col-lg- col-md-6 col-12">
+        <h1>Add Service</h1>
+
+        <form #servicesForm="ngForm" class="mt-4" (ngSubmit)="createService(servicesForm.value)">
+            <div class="mb-3">
+              <label for="ServiceName"  class="form-label">Service Name</label>
+              <input type="text" class="form-control" ngModel name="ServiceName">
+            </div>
+            <div class="mb-3">
+              <label for="photoUrl"  class="form-label">Photo URL</label>
+              <input type="text" class="form-control" ngModel name="photoUrl">
+            </div>
+            <button  class="btn btn-primary">Submit</button>
+          </form>
+     </div>
+    </div>
+</div>

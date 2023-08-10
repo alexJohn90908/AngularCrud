@@ -1,0 +1,14 @@
+<div class="container pt-5">
+    <div class="row justify-content-center">
+     <div class="col-lg- col-md-6 col-12">
+        <h1>Update Service</h1>
+        <form  (ngSubmit)="update(updateForm.value)" class="mt-4">
+            <div class="mb-3">
+              <label for="ServiceName" class="form-label">Service Name</label>
+              <input type="text" class="form-control" [(ngModel)]="updateForm.ServiceName" name="ServiceName">
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+          </form>
+     </div>
+    </div>
+</div>
